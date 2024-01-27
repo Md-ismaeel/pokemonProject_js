@@ -1,0 +1,52 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: auto;
+  width: 100%;
+}
+
+section {
+  height: auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.container-1 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.optionType {
+  font-variant: small-caps;
+}
+
+.pokemonList {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.pokemonCardDetail {
+  height: 15rem;
+  width: 14rem;
+  border: 1px solid red;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: start;
+  padding: 15px 2px;
+}
