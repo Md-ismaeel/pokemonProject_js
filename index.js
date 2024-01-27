@@ -6,13 +6,15 @@ const pokemonList = document.querySelector(".pokemonList");
 // optionsType Url:-
 const typeOfUrl = "https://pokeapi.co/api/v2/type/";
 
-// *****************************************************************************************
+/*****************************************************************************************
+@param 
 
-// *****************************************************************************************
+@return 
+*****************************************************************************************/
 async function createOptions() {
   const response = await fetch(typeOfUrl);
   const data = await response.json();
-  console.log(data);
+  // console.log(data);
 
   data.results.forEach((element) => {
     let Options = document.createElement("option");
@@ -40,7 +42,7 @@ async function allTypeOfPokemon() {
   data.results.forEach(async (ele) => {
     const response = await fetch(ele.url);
     const pokemonData = await response.json();
-    // console.log(pokemonData);
+    console.log(pokemonData);
 
     // Create and manipulate DOM elements based on 'pokemonData'
     const pokemonCard_Detail = document.createElement("div");
@@ -48,17 +50,20 @@ async function allTypeOfPokemon() {
     const pokemonBack_Card = document.createElement("div");
     const typeData = document.createElement("div");
 
-    // Creating element Dynamically
+    // // Creating element Dynamically
     pokemonFront_Card.innerHTML = `
-      <div>
-      <p id="idNumber">#${pokemonData.id}</p>
-      <pi d="idColor"></pi>
-      <div>
-      <figure>
-        <img src="${pokemonData.sprites.front_default}" alt="${pokemonData.name}">
-        <figcaption>${pokemonData.name}</figcaption>
-      </figure>
-    `;
+              <div class="pokeIdes">
+              <p id="idNumber">#${pokemonData.id}</p>
+              <p id="dColor"></p>
+              </div>
+              <figure class="figure">
+                <img src="${pokemonData.sprites.front_default}" alt="${pokemonData.name}">
+                <figcaption>${pokemonData.name}</figcaption>
+              </figure>
+              <div class="heightAndWidth">
+              <p>height:- ${pokemonData.height}</p>
+              <p>weight:- ${pokemonData.weight}</p>
+              </div>`;
     pokemonData.types.forEach((e) => {
       let p = document.createElement("p");
 
@@ -66,16 +71,26 @@ async function allTypeOfPokemon() {
       typeData.appendChild(p);
     });
 
-    pokemonBack_Card = `<figure>
-    <img src="${pokemonData.sprites.back_default}" alt="${pokemonData.name}">
-    <figcaption>${pokemonData.name}</figcaption>
-    </figure>`;
+    pokemonBack_Card.innerHTML = `
+          <div class="pokeIdes">
+            <p id="idNumber">#${pokemonData.id}</p>
+            <p id="dColor"></p>
+          </div>
+          <figure>
+            <img src="${pokemonData.sprites.back_default}" alt="${pokemonData.name}">
+            <figcaption>${pokemonData.name}</figcaption>
+          </figure>
+          <div class=""abilities>
+            <p>${pokemonData.abilities[0].ability.name}
+            <p>${pokemonData.abilities[1].ability.name}
+          <div>`;
 
     typeData.classList.add("types");
     pokemonFront_Card.appendChild(typeData);
     pokemonCard_Detail.classList.add("pokemonCardDetail");
     pokemonCard_Detail.append(pokemonFront_Card, pokemonBack_Card);
     pokemonFront_Card.classList.add("pokemonFrontCard");
+    pokemonBack_Card.classList.add("pokemonBackCard");
     pokemonCard_Detail.classList.add("pokemonCardDetail");
     pokemonList.appendChild(pokemonCard_Detail);
   });

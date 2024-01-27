@@ -19,6 +19,9 @@ section {
   gap: 1rem;
 }
 
+.h1Tag {
+  font-variant: small-caps;
+}
 .container-1 {
   width: 100%;
   display: flex;
@@ -29,7 +32,6 @@ section {
 }
 
 .optionType {
-  font-variant: small-caps;
 }
 
 .pokemonList {
@@ -39,14 +41,126 @@ section {
   justify-content: center;
   align-items: center;
   gap: 1.5rem;
+  perspective: 1000px;
 }
 
 .pokemonCardDetail {
-  height: 15rem;
+  position: relative;
+  height: 17rem;
   width: 14rem;
   border: 1px solid red;
   display: flex;
   justify-content: space-evenly;
   align-items: start;
   padding: 15px 2px;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgb(0, 0, 0, 0.2);
+}
+
+.pokemonList:hover
+.pokemonCardDetail {
+  transform: rotateY(180deg);
+}
+
+.pokemonFrontCard {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.pokemonFrontCard,
+.pokemonBackCard {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.pokemonFrontCard {
+  background-color: #bbb;
+  color: black;
+}
+
+.pokemonBackCard {
+  background-color: #2980b9;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+.pokeIdes {
+  width: 100%;
+  height: 100%;
+  padding: 0px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#idNumber {
+  font-size: 18px;
+  text-align: center;
+}
+
+#dColor {
+  width: 15px;
+  height: 10px;
+  border-radius: 40%;
+  background-color: rgb(18, 81, 18);
+}
+.figure {
+  width: 100%;
+  height: 100%;
+  padding: 0px 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.figure figcaption {
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+.heightAndWidth {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  padding: 0px 10px;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.types {
+  width: 100%;
+  height: 100%;
+  padding: 0px 10px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+.types p {
+  text-align: center;
+  width: 40%;
+  padding: 3px 5px;
+  border: 1px solid red;
+  border-radius: 10px;
+}
+
+.pokemonBackCard {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
