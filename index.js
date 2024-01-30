@@ -30,8 +30,7 @@ async function createOptions() {
   // console.log(optionType);
 }
 
-const apiOfAllPokemon =
-  "https://pokeapi.co/api/v2/pokemon/?offset=0&limit=130";
+const apiOfAllPokemon = "https://pokeapi.co/api/v2/pokemon/?offset=0&limit=130";
 
 /*****************************************************************************************
 
@@ -80,8 +79,8 @@ function renderCard(pokemonData) {
       <figcaption>${pokemonData.name}</figcaption>
     </figure>
     <div class="heightAndWidth">
-    <p>height:- ${pokemonData.height}</p>
-    <p>weight:- ${pokemonData.weight}</p>
+    <p>height ${pokemonData.height}</p>
+    <p>weight ${pokemonData.weight}</p>
     </div>
     <div class="stats">
     <div class="state-1">
@@ -109,8 +108,10 @@ function renderCard(pokemonData) {
 
   if (pokemonData.types.length == 1) {
     pokemonCard_Detail.style.backgroundColor = backgroundColor(
-      pokemonData.types[0].type.name
-    );
+      pokemonData.types[0].type.name);
+      // pokemonData.types[0].type.name.style.backgroundColor = "black";
+
+
 
     // console.log(backgroundColor(pokemonData.types[0].type.name));
   } else {
@@ -135,7 +136,7 @@ function renderCard(pokemonData) {
       <img src="${pokemonData.sprites.back_default}" alt="${pokemonData.name}">
       <figcaption>${pokemonData.name}</figcaption>
     </figure>
-    <p class="abilityHeading">ABILITIES:-</p>`;
+    <p class="abilityHeading">ABILITIES</p>`;
 
   const abilityData = document.createElement("div");
 
@@ -216,6 +217,9 @@ async function searchingPokemonByName() {
     const data = await response.json();
     renderCard(data);
   }
+  // if ( data !== inputVal) {
+  //   alert("Please type Correct Name");
+  // }
 }
 
 // addEventListener it will fire when the user will click on it that will render all the Cards
