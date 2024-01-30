@@ -10,6 +10,8 @@ const typeOfUrl = "https://pokeapi.co/api/v2/type/";
 /*****************************************************************************************
 @param 
 
+here fetching api on the  bases of types of pokemon  and each time creating option tag and appending in select 
+
 @return 
 *****************************************************************************************/
 async function createOptions() {
@@ -28,13 +30,16 @@ async function createOptions() {
   // console.log(optionType);
 }
 
-const apiOfAllPokemon = "https://pokeapi.co/api/v2/pokemon/?offset=0&limit=50";
+const apiOfAllPokemon =
+  "https://pokeapi.co/api/v2/pokemon/?offset=0&limit=130";
 
 /*****************************************************************************************
-from this function fetching all pokemon 
+
 @param 
 
-@return 
+from this function fetching all pokemon on the bases of limits and passing the particular pokemon details to renderCard function 
+
+@return pokemonData
 *****************************************************************************************/
 async function allTypeOfPokemon() {
   const response = await fetch(apiOfAllPokemon);
@@ -49,9 +54,9 @@ async function allTypeOfPokemon() {
   });
 }
 
-/*****************************************************************************************
+/****************************************************************************************
 @param pokemonData
-  updating Dom dynamically when the function will call
+ updating Dom dynamically when the function will call and the renderFunction create the cards as per needs
 @return 
 *****************************************************************************************/
 function renderCard(pokemonData) {
@@ -100,8 +105,20 @@ function renderCard(pokemonData) {
 
     p.innerText = e.type.name;
     typeData.appendChild(p);
-    pokemonCard_Detail.style.backgroundColor = backgroundColor(e.type.name);
   });
+
+  if (pokemonData.types.length == 1) {
+    pokemonCard_Detail.style.backgroundColor = backgroundColor(
+      pokemonData.types[0].type.name
+    );
+
+    // console.log(backgroundColor(pokemonData.types[0].type.name));
+  } else {
+    let cardBackground1 = backgroundColor(pokemonData.types[0].type.name);
+    let cardBackground2 = backgroundColor(pokemonData.types[1].type.name);
+    pokemonCard_Detail.style.background = `linear-gradient(${cardBackground1}, ${cardBackground2})`;
+  }
+
   typeData.classList.add("types");
   pokemonFront_Card.appendChild(typeData);
   pokemonFront_Card.classList.add("pokemonFrontCard");
@@ -145,46 +162,69 @@ function renderCard(pokemonData) {
 /*****************************************************************************************
 @param 
 
-@return 
+here that function selecting the option as per user selection than it will render that kind of pokemon cards 
+ and filterSelectTypes() returning the data to map the array bed on length and then filtering out from the mappedData ------>
+
+@return data
 *****************************************************************************************/
 async function filterSelectTypes() {
   pokemonList.innerHTML = "";
   const response = await fetch(optionType.value);
   const data = await response.json();
-  data.pokemon.forEach(async (element) => {
+  const mappedData = data.pokemon.map(async (element) => {
     const dataUrl = element.pokemon.url;
     const response = await fetch(dataUrl);
     const data = await response.json();
-    console.log(data);
+    return data;
+  });
 
+  Promise.all(mappedData).then((res) => {
+    //  console.log(res);
+    const monoType = res.filter((elem) => {
+      return elem.types.length == 1;
+    });
+    const dualType = res.filter((elem) => {
+      return elem.types.length == 2;
+    });
 
-    // const monoType = data.filter((elem) => {
-    //   return elem.types.length == 1;
-    // });
-
-    // const doubleType = data.filter((elem) => {
-    //   return elem.types.length == 2;
-    // });
-
-    renderCard(data);
-    // renderCard(doubleType);
+    for (let i = 0; i < monoType.length; i++) {
+      renderCard(monoType[i]);
+    }
+    // console.log(monoType.length);
+    for (let i = 0; i < dualType.length; i++) {
+      renderCard(dualType[i]);
+    }
   });
 }
 
+/*****************************************************************************************
+@param 
+
+here from this function taking  user input value to particular pokemon as per user want to search  it will render on the ui
+
+@return 
+*****************************************************************************************/
 async function searchingPokemonByName() {
   pokemonList.innerHTML = "";
   let inputVal = searchPokemonInput.value;
-  const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${inputVal}`);
-  const data = await response.json();
-  console.log(data);
-  renderCard(data);
+  if (inputVal == "") {
+    alert("please insert input Value");
+  } else {
+    const response = await fetch(
+      `https://pokeapi.co/api/v2/pokemon/${inputVal}`
+    );
+    const data = await response.json();
+    renderCard(data);
+  }
 }
 
+// addEventListener it will fire when the user will click on it that will render all the Cards
 searchFilter.addEventListener("click", (event) => {
   event.preventDefault();
   filterSelectTypes();
 });
 
+// addEventListener it will fire when user will search particular pokemon name like pikachu and will hit on click it will render
 searchBtn.addEventListener("click", (event) => {
   event.preventDefault();
   searchingPokemonByName();

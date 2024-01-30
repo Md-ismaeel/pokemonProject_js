@@ -25,11 +25,13 @@ section {
 }
 .container-1 {
   width: 100%;
+  height: 10rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 1rem;
+  background-color: aqua;
 }
 
 .optionType {
@@ -106,7 +108,7 @@ section {
   align-items: center;
   padding: 5px;
   border-radius: 7px;
-  background-color: rgb(185, 185, 185);
+  background-color: aliceblue;
   text-transform: uppercase;
   font-family: 14px;
   font-size: 13px;
@@ -206,7 +208,7 @@ section {
   align-items: center;
   padding: 5px;
   border-radius: 7px;
-  background-color: rgb(185, 185, 185);
+  background-color: aliceblue;
   text-transform: uppercase;
   font-family: 14px;
   font-size: 13px;
@@ -248,24 +250,3 @@ section {
   flex-wrap: wrap;
   gap: 5px;
 }
-
-/*
-    normal:"#CAD8CF",
-    flying:"#E1E1E1",
-    fighting:"#F75454",
-    poison:"#D86FB9",
-    ground:"#EBC174",
-    rock:"#B5904C",
-    bug:"#77A93A",
-    ghost:"#A595B1",
-    steel:"#D3D3D3",
-    fire:"#FF8800",
-    water:"#00A6FF",
-    grass:"#40FF00",
-    electric:"#FFFF00",
-    psychic:"#E764C9",
-    ice:"#33A0F8",
-    dragon:"#FFD700",
-    dark:"#8A8A8A",
-    fairy:"#FF7C92" 
- */
