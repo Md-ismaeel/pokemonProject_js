@@ -86,7 +86,7 @@ section {
 }
 
 #searchFilter:hover {
-  background: hsl(0, 100%, 51%);
+  background: hsl(0, 100%, 41%);
   transform: scale(0.95);
   filter: drop-shadow(2px 4px 6px black);
 }
@@ -103,7 +103,7 @@ section {
 }
 
 #reset:hover {
-  background: hsl(240, 52%, 44%);
+  background: hsl(240, 52%, 34%);
   transform: scale(0.95);
   cursor: pointer;
   filter: drop-shadow(2px 4px 6px black);
@@ -158,7 +158,7 @@ section {
   height: 2.5rem;
   outline: 0;
   border: 0;
-  background-color: hsl(181, 100%, 51%);
+  background-color: hsl(181, 100%, 35%);
   border-radius: 5px;
   color: white;
   text-transform: uppercase;
@@ -172,6 +172,7 @@ section {
 #searchBtn:hover {
   transform: scale(0.95);
   cursor: pointer;
+  background-color: hsl(181, 100%, 41%);
   filter: drop-shadow(2px 4px 6px black);
 }
 .pokemonList {
