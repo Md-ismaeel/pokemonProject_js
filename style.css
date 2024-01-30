@@ -7,7 +7,21 @@
 
 body {
   height: auto;
-  width: 100%;
+  width: 100vw;
+  overflow-x: hidden;
+  /* background-color: #aca7c5; */
+  /* background-image: linear-gradient(
+    90deg,
+    #020024 0%,
+    #090979 35%,
+    #00d4ff 100%
+  ); */
+  background: linear-gradient(
+    90deg,
+    rgba(131, 58, 180, 1) 0%,
+    rgba(253, 29, 29, 1) 50%,
+    rgba(252, 176, 69, 1) 100%
+  );
 }
 
 section {
@@ -21,24 +35,145 @@ section {
 }
 
 .h1Tag {
+  margin-top: 1rem;
   font-variant: small-caps;
+  font-family: "Pokemon Solid";
+  font-size: 40px;
+  color: white;
+  text-shadow: 2px 2px 2px 2px black;
+  filter: drop-shadow(2px 4px 1px black);
 }
 .container-1 {
   width: 100%;
-  height: 10rem;
+  height: 12rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 1rem;
-  background-color: aqua;
+  background: linear-gradient(#ff6034, #f9d423);
 }
 
 .optionType {
+  width: 8rem;
+  height: 2.5rem;
+  padding: 0px 15px;
+  text-transform: uppercase;
+  color: white;
+  background: #0079a2;
+  border: 0;
+  outline: 0;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  font-weight: bold;
 }
 
+#formContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+#searchFilter {
+  width: 10rem;
+  height: 2.5rem;
+  text-transform: uppercase;
+  font-size: 14px;
+  color: white;
+  background: hsl(0, 100%, 61%);
+  border: 0;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#searchFilter:hover {
+  background: hsl(0, 100%, 51%);
+  transform: scale(0.95);
+}
+
+#reset {
+  height: 2.5rem;
+  width: 7rem;
+  outline: 0;
+  border: 0;
+  border-radius: 5px;
+  background: hsl(240, 52%, 54%);
+  cursor: pointer;
+}
+
+#reset:hover {
+  background: hsl(240, 52%, 44%);
+  transform: scale(0.95);
+  cursor: pointer;
+}
+
+#resetOf {
+  font-size: 22px;
+  color: white;
+  animation-name: ismail;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+  cursor: pointer;
+}
+
+@keyframes ismail {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(180deg);
+  }
+}
+
+#resetOf:hover {
+  transform: scale(0.95);
+  cursor: pointer;
+}
+
+#form2 {
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+#searchPokemonInput {
+  width: 19.5rem;
+  height: 2.5rem;
+  outline: 0;
+  border: 0;
+  background: deepskyblue;
+  padding: 0px 15px;
+  border-radius: 5px;
+}
+
+#searchBtn {
+  width: 7rem;
+  height: 2.5rem;
+  outline: 0;
+  border: 0;
+  background-color: hsl(181, 100%, 51%);
+  border-radius: 5px;
+  color: white;
+  text-transform: uppercase;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+#searchBtn:hover {
+  transform: scale(0.95);
+  cursor: pointer;
+}
 .pokemonList {
   height: auto;
+  margin-top: 2rem;
   width: 100%;
   display: flex;
   flex-wrap: wrap;
