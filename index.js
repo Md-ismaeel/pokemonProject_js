@@ -136,7 +136,7 @@ function renderCard(pokemonData) {
       <img src="${pokemonData.sprites.back_default}" alt="${pokemonData.name}">
       <figcaption>${pokemonData.name}</figcaption>
     </figure>
-    <p class="abilityHeading">ABILITIES</p>`;
+    <p class="abilityHeading">Abilities</p>`;
 
   const abilityData = document.createElement("div");
 
