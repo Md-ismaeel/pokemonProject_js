@@ -2,14 +2,16 @@
 
 A web application that utilizes the PokeAPI to fetch and display Pokémon data based on different types. Users can filter Pokémon by type, search for Pokémon by name, and view detailed information presented in dynamically created cards.
 
+![Alt Text](./Screenshot%202024-01-31%20235411.png)
+
 ## Tech. Stack Used:
 
 - [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
-- [HTML](https://en.wikipedia.org/wiki/HTML))
+- [HTML](https://en.wikipedia.org/wiki/HTML)
 - [Css](https://en.wikipedia.org/wiki/CSS)
 - [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
 - [JavScript Es6](https://en.wikipedia.org/wiki/JavaScript)
-- [GitHub](https://github.com/))
+- [GitHub](https://github.com/)
 - [Vs-Code](https://code.visualstudio.com/)
 
 ## Features
@@ -22,3 +24,4 @@ A web application that utilizes the PokeAPI to fetch and display Pokémon data b
 
 ## Hosted Link:-
 
+        - [GeeksterPok Project](https://md-ismaeel.github.io/pokemonProject_js/)
