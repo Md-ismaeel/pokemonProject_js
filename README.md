@@ -24,4 +24,4 @@ A web application that utilizes the PokeAPI to fetch and display Pokémon data b
 
 ## Hosted Link:-
 
-        - [GeeksterPok Project](https://md-ismaeel.github.io/pokemonProject_js/)
+- [GeeksterPok Project](https://md-ismaeel.github.io/pokemonProject_js/)
