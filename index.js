@@ -48,7 +48,7 @@ async function allTypeOfPokemon() {
   data.results.forEach(async (ele) => {
     const response = await fetch(ele.url);
     const pokemonData = await response.json();
-    // console.log(pokemonData);
+    console.log(pokemonData);
     renderCard(pokemonData);
   });
 }
