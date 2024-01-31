@@ -30,7 +30,7 @@ async function createOptions() {
   // console.log(optionType);
 }
 
-const apiOfAllPokemon = "https://pokeapi.co/api/v2/pokemon/?offset=0&limit=500";
+const apiOfAllPokemon = "https://pokeapi.co/api/v2/pokemon/?offset=0&limit=200";
 
 /*****************************************************************************************
 
@@ -106,11 +106,10 @@ function renderCard(pokemonData) {
     typeData.appendChild(p);
   });
 
-  
-
   if (pokemonData.types.length == 1) {
     pokemonCard_Detail.style.backgroundColor = backgroundColor(
-      pokemonData.types[0].type.name);
+      pokemonData.types[0].type.name
+    );
 
     // console.log(backgroundColor(pokemonData.types[0].type.name));
   } else {
@@ -206,19 +205,16 @@ here from this function taking  user input value to particular pokemon as per us
 *****************************************************************************************/
 async function searchingPokemonByName() {
   pokemonList.innerHTML = "";
-  let inputVal = searchPokemonInput.value;
-  if (inputVal == "") {
-    alert("please insert input Value");
-  } else {
+  try {
+    let inputVal = searchPokemonInput.value;
     const response = await fetch(
       `https://pokeapi.co/api/v2/pokemon/${inputVal}`
     );
     const data = await response.json();
     renderCard(data);
+  } catch (error) {
+    alert("Pressed pokemon Name not a Valid Name", error);
   }
-  // if ( data !== inputVal) {
-  //   alert("Please type Correct Name");
-  // }
 }
 
 // addEventListener it will fire when the user will click on it that will render all the Cards
