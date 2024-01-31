@@ -2,9 +2,9 @@
 
 A web application that utilizes the PokeAPI to fetch and display Pokémon data based on different types. Users can filter Pokémon by type, search for Pokémon by name, and view detailed information presented in dynamically created cards.
 
-## Table of Contents
+## Tech. Stack Used:
 
-- [Features](#features)
+- [FetchApi]([features](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API))
 - [Installation](#installation)
 - [Usage](#usage)
 - [Dependencies](#dependencies)
