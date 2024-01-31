@@ -5,12 +5,12 @@ A web application that utilizes the PokeAPI to fetch and display Pokémon data b
 ## Tech. Stack Used:
 
 - [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Dependencies](#dependencies)
-- [Contributing](#contributing)
-- [License](#license)
-- [Acknowledgments](#acknowledgments)
+- [HTML](https://en.wikipedia.org/wiki/HTML))
+- [Css](https://en.wikipedia.org/wiki/CSS)
+- [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
+- [JavScript Es6](https://en.wikipedia.org/wiki/JavaScript)
+- [GitHub](https://github.com/))
+- [Vs-Code](https://code.visualstudio.com/)
 
 ## Features
 
@@ -20,9 +20,5 @@ A web application that utilizes the PokeAPI to fetch and display Pokémon data b
 - **Search by Name**: Enables users to search for a specific Pokémon by name and displays its details.
 - **Color-Coded Cards**: Pokémon cards are styled with background colors based on their types.
 
-## Installation
+## Hosted Link:-
 
-1. Clone the repository:
-
-   ```bash
-   git clone https://github.com/your-username/pokemon-web-app.git
