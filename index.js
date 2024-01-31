@@ -30,7 +30,7 @@ async function createOptions() {
   // console.log(optionType);
 }
 
-const apiOfAllPokemon = "https://pokeapi.co/api/v2/pokemon/?offset=0&limit=1302";
+const apiOfAllPokemon = "https://pokeapi.co/api/v2/pokemon/?offset=0&limit=500";
 
 /*****************************************************************************************
 
@@ -106,12 +106,11 @@ function renderCard(pokemonData) {
     typeData.appendChild(p);
   });
 
+  
+
   if (pokemonData.types.length == 1) {
     pokemonCard_Detail.style.backgroundColor = backgroundColor(
       pokemonData.types[0].type.name);
-      // pokemonData.types[0].type.name.style.backgroundColor = "black";
-
-
 
     // console.log(backgroundColor(pokemonData.types[0].type.name));
   } else {
