@@ -4,7 +4,7 @@ A web application that utilizes the PokeAPI to fetch and display Pokémon data b
 
 ## Tech. Stack Used:
 
-- [FetchApi]([#features](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API))
+- [FetchApi]((https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API))
 - [Installation](#installation)
 - [Usage](#usage)
 - [Dependencies](#dependencies)
