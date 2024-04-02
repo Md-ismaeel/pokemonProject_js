@@ -9,12 +9,10 @@ body {
   height: auto;
   width: 100vw;
   overflow-x: hidden;
-  background: linear-gradient(
-    90deg,
-    rgba(131, 58, 180, 1) 0%,
-    rgba(253, 29, 29, 1) 50%,
-    rgba(252, 176, 69, 1) 100%
-  );
+  background: linear-gradient(90deg,
+      rgba(131, 58, 180, 1) 0%,
+      rgba(253, 29, 29, 1) 50%,
+      rgba(252, 176, 69, 1) 100%);
 }
 
 section {
@@ -35,6 +33,7 @@ section {
   text-shadow: 2px 2px 2px 2px black;
   filter: drop-shadow(2px 4px 1px black);
 }
+
 .container-1 {
   width: 100%;
   height: 12rem;
@@ -85,7 +84,7 @@ section {
   filter: drop-shadow(3px 2px 4px black);
 }
 
-#searchFilter:hover {
+#searchFilter:active {
   background: hsl(0, 100%, 41%);
   transform: scale(0.95);
   filter: drop-shadow(2px 4px 6px black);
@@ -102,7 +101,7 @@ section {
   filter: drop-shadow(3px 2px 4px black);
 }
 
-#reset:hover {
+#reset:active {
   background: hsl(240, 52%, 34%);
   transform: scale(0.95);
   cursor: pointer;
@@ -123,6 +122,7 @@ section {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(180deg);
   }
@@ -169,12 +169,13 @@ section {
   filter: drop-shadow(3px 2px 4px black);
 }
 
-#searchBtn:hover {
+#searchBtn:active {
   transform: scale(0.95);
   cursor: pointer;
   background-color: hsl(181, 100%, 41%);
   filter: drop-shadow(2px 4px 6px black);
 }
+
 .pokemonList {
   height: auto;
   margin-top: 2rem;
@@ -258,6 +259,7 @@ section {
   font-family: 14px;
   font-size: 13px;
 }
+
 .figure {
   width: 100%;
   height: 9rem;
@@ -268,7 +270,7 @@ section {
   align-items: center;
 }
 
-.figure img {
+.figure img:hover {
   width: 60%;
   animation-name: ismail;
   animation-duration: 2s;
@@ -280,16 +282,20 @@ section {
   0% {
     transform: scale(1);
   }
+
   25% {
     transform: scale(0.5);
   }
+
   50% {
     transform: scale(0.75);
   }
+
   100% {
     transform: scale(1.2);
   }
 }
+
 .figure figcaption {
   font-size: 20px;
   text-transform: uppercase;
@@ -308,8 +314,8 @@ section {
 
 .types {
   width: 100%;
-  margin-top: .7rem;
-  margin-bottom: .5rem;
+  margin-top: 0.7rem;
+  margin-bottom: 0.5rem;
   padding: 0px 10px;
   display: flex;
   justify-content: space-evenly;
@@ -339,6 +345,7 @@ section {
   /* background-color: #,#; */
   color: white;
 }
+
 .stats {
   width: 100%;
   display: flex;
@@ -412,16 +419,20 @@ section {
   0% {
     transform: scale(1);
   }
+
   25% {
     transform: scale(0.5);
   }
+
   50% {
     transform: scale(0.75);
   }
+
   100% {
     transform: scale(1.2);
   }
 }
+
 .figure figcaption {
   font-size: 20px;
   text-transform: uppercase;
@@ -478,6 +489,7 @@ section {
     filter: drop-shadow(2px 4px 1px black);
     text-align: center;
   }
+
   .container-1 {
     width: 100%;
     height: 17rem;
@@ -586,6 +598,7 @@ section {
     cursor: pointer;
     filter: drop-shadow(2px 4px 6px black);
   }
+
   .pokemonList {
     height: auto;
     margin-top: 2rem;
@@ -624,6 +637,7 @@ section {
     filter: drop-shadow(2px 4px 1px black);
     text-align: center;
   }
+
   .container-1 {
     width: 100%;
     height: 17rem;
@@ -732,6 +746,7 @@ section {
     cursor: pointer;
     filter: drop-shadow(2px 4px 6px black);
   }
+
   .pokemonList {
     height: auto;
     margin-top: 2rem;
@@ -770,6 +785,7 @@ section {
     filter: drop-shadow(2px 4px 1px black);
     text-align: center;
   }
+
   .container-1 {
     width: 100%;
     height: 17rem;
@@ -878,6 +894,7 @@ section {
     cursor: pointer;
     filter: drop-shadow(2px 4px 6px black);
   }
+
   .pokemonList {
     height: auto;
     margin-top: 2rem;

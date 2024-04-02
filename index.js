@@ -48,7 +48,7 @@ async function allTypeOfPokemon() {
   data.results.forEach(async (ele) => {
     const response = await fetch(ele.url);
     const pokemonData = await response.json();
-    console.log(pokemonData);
+    // console.log(pokemonData);
     renderCard(pokemonData);
   });
 }
@@ -170,6 +170,8 @@ async function filterSelectTypes() {
   pokemonList.innerHTML = "";
   const response = await fetch(optionType.value);
   const data = await response.json();
+  console.log(data);
+
   const mappedData = data.pokemon.map(async (element) => {
     const dataUrl = element.pokemon.url;
     const response = await fetch(dataUrl);
@@ -220,7 +222,7 @@ async function searchingPokemonByName() {
 // addEventListener it will fire when the user will click on it that will render all the Cards
 searchFilter.addEventListener("click", (event) => {
   event.preventDefault();
-  filterSelectTypes();
+  // filterSelectTypes();
 });
 
 // addEventListener it will fire when user will search particular pokemon name like pikachu and will hit on click it will render
@@ -278,7 +280,9 @@ function backgroundColor(pokemonData) {
 }
 
 /***********************************
-      window onLoad----->
+      window onload----->
 ***********************************/
-window.onload = () => createOptions();
-allTypeOfPokemon();
+window.onload = () => {
+  createOptions();
+  allTypeOfPokemon();
+};
